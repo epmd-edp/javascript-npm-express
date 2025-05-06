@@ -1,11 +1,8 @@
-require("dotenv/config");
-require("regenerator-runtime");
+import express from "express";
 
-import { app } from "./utils";
+const app = express();
+const port = process.env.PORT ?? "9001";
 
-const PORT: string | number = process.env.PORT || 8080;
-
-const server = app.listen(PORT, () => console.info(`Server running on port ${PORT}`));
-
-export default server;
-
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
